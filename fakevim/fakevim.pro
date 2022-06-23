@@ -9,9 +9,9 @@ DEFINES += QTCREATOR_UTILS_STATIC_LIB
 
 include(fakevim.pri)
 
-target.path = $$[QT_INSTALL_LIBS]
+target.path = $${LIBS_PREFIX}/lib
 
 headers.files = $$HEADERS
-headers.path = $$[QT_INSTALL_PREFIX]/include/$$TARGET/
+headers.path = $${LIBS_PREFIX}/include/$$TARGET/
 
 INSTALLS += target headers
