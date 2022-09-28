@@ -12,6 +12,7 @@ configure_file(
 set(INSTALL_PKG_CONFIG_DIR "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig"
     CACHE PATH "Installation directory for pkg-config files")
 
+if (NOT CREATE_STATIC_LIBRARY)
 install(
     FILES
         "${CMAKE_CURRENT_BINARY_DIR}/${bin}.pc"
@@ -20,3 +21,4 @@ install(
     COMPONENT
         dev
     )
+endif() # NOT CREATE_STATIC_LIBRARY

@@ -32,6 +32,7 @@ target_include_directories(${bin}
     INTERFACE $<INSTALL_INTERFACE:include/${bin}>
     )
 
+if (NOT CREATE_STATIC_LIBRARY)
 install(
     TARGETS ${bin} EXPORT ${bin}Targets
     RUNTIME DESTINATION "${INSTALL_BIN_DIR}" COMPONENT bin
@@ -81,3 +82,4 @@ install(
     COMPONENT
         dev
     )
+endif() # NOT CREATE_STATIC_LIBRARY
